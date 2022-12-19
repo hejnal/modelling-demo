@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: prod_raw
+    tables:
+      - name: sales_data
+        description: "Ingested sales data"

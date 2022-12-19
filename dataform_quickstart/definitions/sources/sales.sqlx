@@ -1,0 +1,7 @@
+config {
+    type: "declaration",
+    database: "whejna-modelling-sandbox",
+    schema: "prod_raw",
+    name: "sales_data",
+    description: "Ingested sales data"
+}
