@@ -88,6 +88,9 @@ WORKDIR $DBT_DIR
 # Copy files to the image
 COPY . $DBT_DIR
 
+# Install Dbt deps
+RUN dbt deps
+
 # Run dbt
 ENTRYPOINT ["dbt"]
 
