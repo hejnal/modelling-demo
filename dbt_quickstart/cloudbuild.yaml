@@ -6,7 +6,7 @@ steps:
   args: [
       'build',
       '-t', 'europe-docker.pkg.dev/$PROJECT_ID/dbt-modelling-demo',
-      '--cache-from', 'europe-docker.pkg.dev/$PROJECT_ID/dbt-modelling-demo:latest',
+      '--cache-from', 'europe-docker.pkg.dev/$PROJECT_ID/dbt-modelling-demo/dbt-on-cloud-run-demo:latest',
       './dbt_quickstart/'
     ]
 
@@ -14,7 +14,7 @@ steps:
   id: Push Dbt Image to the Repo
   args: [
       'push',
-      'europe-docker.pkg.dev/$PROJECT_ID/dbt-modelling-demo:latest'
+      'europe-docker.pkg.dev/$PROJECT_ID/dbt-modelling-demo/dbt-on-cloud-run-demo:latest'
     ]
 
 options:
