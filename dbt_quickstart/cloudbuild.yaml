@@ -6,7 +6,7 @@ steps:
       '--network=cloudbuild',
       '-t', 'europe-docker.pkg.dev/$PROJECT_ID/dbt-modelling-demo',
       '--cache-from', 'europe-docker.pkg.dev/$PROJECT_ID/dbt-modelling-demo:latest',
-      '.'
+      './dbt_quickstart/'
     ]
 
 - name: gcr.io/cloud-builders/docker
