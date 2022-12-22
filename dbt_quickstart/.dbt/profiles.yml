@@ -1,0 +1,13 @@
+dbt_quickstart:
+  outputs:
+    dev:
+      dataset: dbt_models
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: europe-west3
+      method: oauth
+      priority: interactive
+      project: whejna-modelling-sandbox
+      threads: 1
+      type: bigquery
+  target: dev

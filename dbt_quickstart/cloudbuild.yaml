@@ -1,0 +1,20 @@
+steps:
+- name: gcr.io/cloud-builders/docker
+  id: Build Dbt Image
+  args: [
+      'build',
+      '--network=cloudbuild',
+      '-t', 'eu.gcr.io/$PROJECT_ID/dbt-modelling-demo',
+      '--cache-from', 'eu.gcr.io/$PROJECT_ID/dbt-modelling-demo:latest',
+      '.'
+    ]
+
+- name: gcr.io/cloud-builders/docker
+  id: Push Dbt Image to the Repo
+  args: [
+      'push',
+      'eu.gcr.io/$PROJECT_ID/dbt-modelling-demo:latest'
+    ]
+
+options:
+  logging: CLOUD_LOGGING_ONLY
