@@ -1,0 +1,21 @@
+steps:
+- name: gcr.io/cloud-builders/docker
+  id: Build Dataform Image
+  env: 
+    - 'DOCKER_BUILDKIT=1'
+  args: [
+      'build',
+      '-t', 'europe-docker.pkg.dev/$PROJECT_ID/dataform-modelling-demo/dataform-on-cloud-run-demo',
+      '--cache-from', 'europe-docker.pkg.dev/$PROJECT_ID/dataform-modelling-demo/dataform-on-cloud-run-demo:latest',
+      './dataform_quickstart/'
+    ]
+
+- name: gcr.io/cloud-builders/docker
+  id: Push Dataform Image to the Repo
+  args: [
+      'push',
+      'europe-docker.pkg.dev/$PROJECT_ID/dataform-modelling-demo/dataform-on-cloud-run-demo:latest'
+    ]
+
+options:
+  logging: CLOUD_LOGGING_ONLY
