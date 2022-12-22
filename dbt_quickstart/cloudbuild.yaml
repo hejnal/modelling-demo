@@ -5,7 +5,6 @@ steps:
     - 'DOCKER_BUILDKIT=1'
   args: [
       'build',
-      '--network=cloudbuild',
       '-t', 'europe-docker.pkg.dev/$PROJECT_ID/dbt-modelling-demo',
       '--cache-from', 'europe-docker.pkg.dev/$PROJECT_ID/dbt-modelling-demo:latest',
       './dbt_quickstart/'
