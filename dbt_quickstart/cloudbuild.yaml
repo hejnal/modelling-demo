@@ -1,6 +1,8 @@
 steps:
 - name: gcr.io/cloud-builders/docker
   id: Build Dbt Image
+  env: 
+    - 'DOCKER_BUILDKIT=1'
   args: [
       'build',
       '--network=cloudbuild',
